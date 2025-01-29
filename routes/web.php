@@ -10,3 +10,4 @@ Route::get('/', function () {
 
 //cliente
 Route::get('cliente', [ClientController::class, 'index'])->name('index.client');
+Route::post('cliente', [ClientController::class, 'store'])->name('store.client');

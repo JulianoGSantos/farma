@@ -7,159 +7,74 @@
     <title>Cadastro de clientes</title>
     @extends('layout')
 </head>
-
-    <body class=" sm:text-xs md:text-base lg:text-lg">
-        <form action="#" method="POST">
-        @csrf
-        <div>
-            <div class="mt-5">CADASTRO DE PACIENTES</div>
-            <div class="grid grid-cols-2">
-
-                <div class="mt-2">
-                    <label for="iname" class="font-semibold">Nome</label><br>
-                    <input type="text" name="name" id="iname" style="height: 35px " class=" form-control @error('name') is invalid @enderror rounded-md ring-2  opacity-60" value=" {{ old('name')}}"><br>
-                    @error('name')
-                        <div class="invalid-feedback text-red-600">
-                            {{$message}}
-                        </div>
-                    @enderror
+<body>
+    <form action="#" method="POST">
+    <div class="container">
+        <div class="row justify-content-md-center">
+            <div class="row">
+                <div class="col-4">
+                        <label for="iname">Nome Fantasia:</label>
+                        <input type="text" id="inome" name="name">
                 </div>
-
-                <div class="mt-2">
-                    <label for="icpf" class="font-semibold">CPF</label><br>
-                    <input type="text" name="cpf" id="icpf" style="height: 35px " class=" form-control @error('cpf') is invalid @enderror rounded-md ring-2 opacity-60" value="{{ old('cpf')}}" >
-                    @error('cpf')
-                    <div class="invalid-feedback text-red-600">
-                        {{$message}}
-                    </div>
-                    @enderror
+                <div class="col-4">
+                    <label for="icompany">razão social</label>
+                    <input type="text" id="icompany" name="company">
                 </div>
-            </div>
-
-            <div class="grid grid-cols-2">
-                <div class="mt-2">
-                    <label for="iemail" class="font-semibold">E-mail</label><br>
-                    <input type="text" name="email" id="iemail" style="height: 35px " class=" form-control @error('email') is invalid @enderror rounded-md ring-2 opacity-60" value="{{ old('email')}}">
-                    @error('email')
-                        <div class=" invalid-feedback text-red-600">
-                            {{$message}}
-                        </div>
-                    @enderror
-                </div>
-
-                <div class="mt-2">
-                    <label for="ibirth" class="font-semibold">Nascimento</label><br>
-                    <input type="date" name="birth" id="ibirth" style="height: 35px " class=" form-control @error('birth') is invalid @enderror rounded-md ring-2 opacity-60" value="{{ old('birth')}}">
-                    @error('birth')
-                        <div class=" invalid-feedback text-red-600">
-                            {{$message}}
-                        </div>
-                    @enderror
-                </div>
-            </div>
-
-            <div class="mt-12 font-semibold text-sm">Endereço</div>
-            <div class="grid grid-cols-2">
-
-                    <div class="mt-2">
-                        <label for="istreet" class="font-semibold">Rua</label><br>
-                        <input type="text" name="street" id="istreet" style="height: 35px " class=" form-control @error('street') is invalid @enderror rounded-md ring-2 opacity-60" value="{{ old('street')}}"><br>
-                        @error('street')
-                            <div class=" invalid-feedback text-red-600">
-                                {{$message}}
-                            </div>
-                        @enderror
-                    </div>
-                
-                    <div class="mt-2">
-                        <label for="inumber" class="font-semibold">Número</label><br>
-                        <input type="text" name="number" id="inumber" style="height: 35px " class=" form-control @error('number') is invalid @enderror rounded-md ring-2 opacity-60" value="{{ old('number')}}"><br>
-                        @error('number')
-                            <div class="invalid-feedback text-red-600">
-                                {{$message}}
-                            </div>
-                        @enderror
-                    </div>
-                
-                    <div class="mt-2">
-                        <label for="icomplement" class="font-semibold">Bairro/Complemento</label><br>
-                        <input type="text" name="complement" id="icomplement" style="height: 35px " class=" form-control @error('complement') is invalid @enderror rounded-md ring-2 opacity-60" value="{{ old('complement')}}"><br>
-                        @error('complement')
-                            <div class="invalid-feedback text-red-600">
-                                {{$message}}
-                            </div>
-                        @enderror
-                    </div>
-                
-                    <div class="mt-2">
-                        <label for="icity" class="font-semibold">Cidade</label><br>
-                        <input type="text" name="city" id="icity" style="height: 35px " class="form-control @error('city') is invalid @enderror rounded-md ring-2 opacity-60" value="{{ old('city')}}"><br>
-                        @error('city')
-                            <div class="invalid-feedback text-red-600">
-                                {{$message}}
-                            </div>
-                        @enderror
-                    </div>
-                
-                    <div class="mt-2">
-                        <label for="istate" class="font-semibold">Estado</label><br>
-                        <input type="text" name="state" id="istate" style="height: 35px " class="form-control @error('state') is invalid @enderror rounded-md ring-2 opacity-60" value="{{ old('state')}}"><br>
-                        @error('state')
-                            <div class="invalid-feedback text-red-600">
-                                {{$message}}
-                            </div>
-                        @enderror
-                    </div>
-                
-                    <div class="mt-2">
-                        <label for="icep" class="font-semibold">CEP</label><br>
-                        <input type="text" name="cep" id="icep" style="height: 35px " class="form-control @error('cep') is invalid @enderror  rounded-md ring-2 opacity-60" value="{{ old('cep')}}"><br>
-                        @error('cep')
-                            <div class="invalid-feedback text-red-600">
-                                {{$message}}
-                            </div>
-                        @enderror
-                    </div>
-                </div>
-            
-            <div class="mt-12 font-semibold text-sm">Telefone</div>    
-            <div class="grid grid-cols-2">
-                    
-                <div>
-                    <label for="icellphone" class="font-semibold">Celular</label><br>
-                    <input type="text" name="cellphone" id="icellphone" style="height: 35px " class="form-control @error('cellphone') is invalid @enderror rounded-md ring-2 opacity-60" value="{{ old('cellphone')}}"><br>
-                    @error('cellphone')
-                        <div class="invalid-feedback text-red-600">
-                            {{$message}}
-                        </div>
-                    @enderror
-                </div>
-                
-                <div>
-                    <label for="icellphone2" class="font-semibold">Celular2</label><br>
-                    <input type="text" name="cellphone2" id="icellphone2" style="height: 35px " class="form-control @error('cellphone2') is invalid @enderror rounded-md ring-2 opacity-60" value="{{ old('cellphone2')}}"><br>
-                    @error('cellphone2')
-                        <div class="invalid-feedback text-red-600">
-                            {{$message}}
-                        </div>
-                    @enderror
+                <div class="col-4">
+                    <label for="icnpj">cnpj</label>
+                    <input type="text" id="icnpj" name="cnpj">
                 </div>
             </div>
         </div>
-            
-            <div class="mt-4 mb-5">
-                <button type="submit" class="bg-red-400 px-4 py-1 rounded-xl text-white ring-1">Cadastrar</button>
+        <div class="row justify-content-md-center">
+            <div class="col-4">
+                <label for="iresponsible">responsável</label>
+                <input type="text" id="iresponsible" name="responsible">
             </div>
-        </form>
-        <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.js"></script>
-        
-        <script>
-            $('#icpf').mask('000.000.000-00', {reverse: true});
-            $('#icep').mask('00000-000');
-            $('#icellphone').mask('(00) 00000-0000');
-            $('#icellphone2').mask('(00) 00000-0000');
-        </script>
-    </body>
+            <div class="col-4">
+                <label for="icellphone">celular</label>
+                <input type="text" id="icellphone" name="cellphone">
+            </div>
+            <div class="col-4">
+                <label for="icellphone2">telefone</label>
+                <input type="text" id="icellphone2" name="cellphone">
+            </div>
+        </div>
+        <div class="row justify-content-md-center">
+            <div class="col-4">
+                <label for="iemail">e-mail</label>
+                <input type="text" id="iemail" name="email">
+            </div>
+            <div class="col-4">
+                <label for="icep">cep</label>
+                <input type="text" id="icep" name="cep">
+            </div>
+            <div class="col-4">
+                <label for="istreet">rua </label>
+                <input type="text" id="istreet" name="street">
+            </div>
+        </div>
+        <div class="row justify-content-md-center">
+            <div class="col-3">
+                <label for="inumber">número</label>
+                <input type="text" id="inumber" name="number">
+            </div>
+            <div class="col-3">
+                <label for="icomplement">complemen</label>
+                <input type="text" id="icomplement" name="complement">
+            </div>
+            <div class="col-3">
+                <label for="icity">cidade </label>
+                <input type="text" id="icity" name="city">
+            </div>
+            <div class="col-3">
+                <label for="istate">estado</label>
+                <input type="text" id="istate" name="state">
+            </div>
+        </div>
+    </div>
+    <input type="button" class="btn btn-primary" value="cadastrar">
+    </form>
+</body>
 
 </html>
