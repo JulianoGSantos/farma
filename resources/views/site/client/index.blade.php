@@ -8,7 +8,8 @@
     @extends('layout')
 </head>
 <body>
-    <form action="#" method="POST">
+    <form action="{{ route('store.client') }}" method="POST">
+    @csrf
     <div class="container">
         <div class="row justify-content-md-center">
             <div class="row">
@@ -37,7 +38,7 @@
             </div>
             <div class="col-4">
                 <label for="icellphone2">telefone</label>
-                <input type="text" id="icellphone2" name="cellphone">
+                <input type="text" id="icellphone2" name="cellphone2">
             </div>
         </div>
         <div class="row justify-content-md-center">
@@ -73,7 +74,7 @@
             </div>
         </div>
     </div>
-    <input type="button" class="btn btn-primary" value="cadastrar">
+<button type="submit" class="btn btn-primary">cadastrar</button>
     </form>
 </body>
 

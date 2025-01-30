@@ -28,26 +28,13 @@ class RequestClient extends FormRequest
             'responsible' => 'required',
             'cellphone' => 'required',
             'cellphone2' => 'nullable',
-            'email' => 'required|email',
+            'email' => 'required',
             'cep' => 'nullable',
             'street' => 'required',
             'number' => 'required',
             'complement' => 'nullable',
             'city' => 'required',
             'state' => 'required',
-        ];
-    }
-
-    public function messages()
-    {
-        return[
-            'name.required' => 'O campo nome é obrigatório.',
-            'email.required' => 'O campo email é obrigatório',
-            'street.required' => 'O campo rua é obrigatório.',
-            'number.required' => 'O campo número é obrigatório',
-            'city.required' => 'O campo cidade é obrigatório',
-            'state.required' => 'O campo estado é obrigatório',
-            'cellphone.required' => 'O campo telefone é obrigatório'
         ];
     }
 }

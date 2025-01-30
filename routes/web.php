@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\OrderController;
+use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -11,3 +13,10 @@ Route::get('/', function () {
 //cliente
 Route::get('cliente', [ClientController::class, 'index'])->name('index.client');
 Route::post('cliente', [ClientController::class, 'store'])->name('store.client');
+
+Route::get('produto', [ProductController::class, 'index'])->name('index.product');
+Route::post('produto', [ProductController::class, 'store'])->name('store.product');
+
+//pedido
+Route::get('pedido', [OrderController::class, 'index'])->name('index.order');
+Route::post('pedido', [OrderController::class, 'store'])->name('store.order');

@@ -12,7 +12,7 @@ class ClientController extends Controller
         return view('site.client.index');
     }
 
-    public function storeclient(RequestClient $request)
+    public function store(RequestClient $request)
     {
         $client = new Client();
 
@@ -31,6 +31,6 @@ class ClientController extends Controller
         $client->state = $request->state;
         $client->save();
 
-        return redirect('home');
+        return redirect('cliente');
     }
 }
