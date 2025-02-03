@@ -13,6 +13,8 @@ Route::get('/', function () {
 //cliente
 Route::get('cliente', [ClientController::class, 'index'])->name('index.client');
 Route::post('cliente', [ClientController::class, 'store'])->name('store.client');
+Route::get('busca', [ClientController::class, 'search'])->name('search.client');
+Route::get('cliente/{id}', [ClientController::class, 'show'])->name('show.client');
 
 Route::get('produto', [ProductController::class, 'index'])->name('index.product');
 Route::post('produto', [ProductController::class, 'store'])->name('store.product');

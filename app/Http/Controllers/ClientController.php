@@ -33,4 +33,25 @@ class ClientController extends Controller
 
         return redirect('cliente');
     }
+
+    public function search(Client $client)
+    {
+        $clients = $client->all();
+
+        $search_client = request('search');
+        $clients = Client::where('name', 'like', '%'.$search_client.'%')->get();
+
+        return view('site.client.search', compact('clients'));
+    }
+
+    public function show(string $id, Client $client)
+    {
+        $clients = $client->all();
+
+        if(!$client = Client::find($id))
+        {
+            return back();
+        }
+        return view('site.client.show', compact('client'));
+    }
 }
