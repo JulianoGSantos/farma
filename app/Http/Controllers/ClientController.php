@@ -54,4 +54,13 @@ class ClientController extends Controller
         }
         return view('site.client.show', compact('client'));
     }
+
+    public function edit(Client $client, string $id)
+    {
+        if(!$client = $client->find($id))
+        {
+            return back();
+        }
+        return view('site.client.edit', compact('client'));
+    }
 }
